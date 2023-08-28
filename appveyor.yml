@@ -1,8 +1,8 @@
 version: 1.0.{build}
 
 image:
-  - Ubuntu2004
   - Visual Studio 2022
+  - Ubuntu2004
 
 platform:
   - x64
@@ -22,7 +22,7 @@ for:
       only:
         - image: Visual Studio 2022
   
-    clone_folder: c:\projects\jspf-cserver-demo
+    clone_folder: c:\projects\jspf-cserver
     install:
       - ps: Install-Product node $env:nodejs_version $env:platform
       - npm install
