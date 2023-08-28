@@ -11,6 +11,7 @@
     "replay": "cd node_modules/jspurefix/dist && node jsfix-cmd \"--dict=../../data/FIX44-CSERVER.xml\" \"--fix=../../data/example/fix.txt\" \"--objects\" --delimiter=\"|\"",
     "tokens": "cd node_modules/jspurefix/dist && node jsfix-cmd \"--dict=../../data/FIX44-CSERVER.xml\" \"--fix=../../data/example/fix.txt\" \"--tokens\" --delimiter=\"|\"",
     "app": "cd dist/app && node app --server ../../data/session/test-acceptor.json",
+    "client": "cd dist/app && node app",
     "help": "cd dist/app && node app --help",
     "init": "cd node_modules/jspurefix && npm run unzip-repo"
   },
