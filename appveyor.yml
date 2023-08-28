@@ -33,6 +33,7 @@ for:
       - cmd: script\build.cmd
       - cmd: cd c:\projects\jspf-cserver
       - cmd: npm install
+      - cmd: npm run init
       - cmd: node_modules\.bin\tsc --version
       - cmd: node_modules\.bin\tsc
 
