@@ -9,15 +9,13 @@ platform:
 
 environment:
   matrix:
-    - nodejs_version: "14"
-    - nodejs_version: "16"
-    - nodejs_version: "18"
     - nodejs_version: "20"
+    - nodejs_version: "18"
+    - nodejs_version: "16"
+    - nodejs_version: "14"
 
 matrix:
   exclude:
-    - image: Visual Studio 2022
-      nodejs_version: 18
     - image: Visual Studio 2022
       nodejs_version: 20
 
@@ -34,6 +32,7 @@ for:
     install:
       - cmd: powershell Install-Product node $env:nodejs_version
       - cmd: node --version
+      - cmd: npm --version
 
     build_script:
       - cmd: cd c:\projects\jspf-cserver
