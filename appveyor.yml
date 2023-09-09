@@ -9,9 +9,9 @@ platform:
 
 environment:
   matrix:
+    - nodejs_version: "18"
     - nodejs_version: "14"
     - nodejs_version: "16"
-    - nodejs_version: "18"
     - nodejs_version: "20"
 
 test_script:
@@ -26,7 +26,8 @@ for:
     clone_folder: c:\projects\jspf-cserver
     install:
       - ps: Install-Product node $env:nodejs_version
-      - npm install
+      - ps: Install-Product node $env:nodejs_version
+      - ps: node --version
 
     build_script:
       - cmd: node --version
