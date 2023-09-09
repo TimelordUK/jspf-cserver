@@ -17,7 +17,7 @@ environment:
 matrix:
   exclude:
     - image: Visual Studio 2022
-      nodejs_version: 20
+      nodejs_version: 18
 
 test_script:
   - ps: Write-Host "jspf-cserver test script"
