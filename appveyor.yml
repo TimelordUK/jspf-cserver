@@ -25,6 +25,7 @@ for:
   
     clone_folder: c:\projects\jspf-cserver
     install:
+      - ps: Remove-Item -LiteralPath "C:\Program Files\nodejs" -Force -Recurse
       - ps: Install-Product node $env:nodejs_version
       - ps: Install-Product node $env:nodejs_version
       - ps: node --version
