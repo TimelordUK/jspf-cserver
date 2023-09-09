@@ -34,7 +34,7 @@ export class FixServer extends AsciiSession {
   }
 
   private marketDataRequest (view: MsgView): void {
-    const req: IMarketDataRequest = view.toObject()
+    const req: IMarketDataRequest = view.toObject() as IMarketDataRequest
     const symbol: string = req?.NoRelatedSym[0]?.Symbol ?? ''
     const id = req.MDReqID
     const price = 1.22759

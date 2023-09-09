@@ -38,7 +38,7 @@ export class FixClient extends AsciiSession {
   }
 
   private marketDataSnapshotFullRefresh (view: MsgView): void {
-    const refresh: IMarketDataSnapshotFullRefresh = view.toObject()
+    const refresh: IMarketDataSnapshotFullRefresh = view.toObject() as IMarketDataSnapshotFullRefresh
     const symbol: string = refresh.Symbol ?? 'na'
     this.logger.info(`received a MD refresh on instrument ${symbol}`)
     this.logger.info(JSON.stringify(refresh, null, 4))
