@@ -14,6 +14,11 @@ environment:
     - nodejs_version: "16"
     - nodejs_version: "20"
 
+matrix:
+  exclude:
+    - image: Visual Studio 2022
+      nodejs_version: 18
+
 test_script:
   - ps: Write-Host "jspf-cserver test script"
 
@@ -25,8 +30,6 @@ for:
   
     clone_folder: c:\projects\jspf-cserver
     install:
-      - ps: Install-Product node $env:nodejs_version
-      - ps: Remove-Item -LiteralPath "C:\Program Files\nodejs" -Force -Recurse
       - ps: Install-Product node $env:nodejs_version
       - ps: node --version
 
