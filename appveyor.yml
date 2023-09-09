@@ -34,12 +34,13 @@ for:
       - ps: node --version
 
     build_script:
-      - ps: node --version
-      - ps: cd c:\projects\jspf-cserver
-      - ps: npm install
-      - ps: npm run init
-      - ps: node_modules\.bin\tsc --version
-      - ps: node_modules\.bin\tsc
+      - cmd: cd c:\projects\jspf-cserver
+      - cmd: node --version
+      - ps: Get-Command npm
+      - cmd: npm install
+      - cmd: npm run init
+      - cmd: node_modules\.bin\tsc --version
+      - cmd: node_modules\.bin\tsc
 
     test_script:
       - cmd: npm run app
