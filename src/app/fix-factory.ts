@@ -1,15 +1,13 @@
 import {
-  MDEntryType,
-  SubscriptionRequestType,
   IMarketDataRequest,
-  IMarketDataSnapshotFullRefresh
+  IMarketDataSnapshotFullRefresh,
+  MDEntryType,
+  SubscriptionRequestType
 } from '../types'
-import { ILooseObject } from 'jspurefix/dist/collections/collection'
 
 export class FixFactory {
-  public FullSnapshot (symbol: string, reqId: string, price: number): ILooseObject {
-    // @ts-expect-error ts2307
-    const snapshot: IMarketDataSnapshotFullRefresh = {
+  public FullSnapshot (symbol: string, reqId: string, price: number): Partial<IMarketDataSnapshotFullRefresh> {
+    return {
       MDReqID: reqId,
       Symbol: symbol,
 
@@ -31,12 +29,10 @@ export class FixFactory {
         }
       ]
     }
-    return snapshot
   }
 
-  public BidOfferRequest (symbol: string): ILooseObject {
-    // @ts-expect-error ts2307
-    const bor: IMarketDataRequest = {
+  public BidOfferRequest (symbol: string): Partial<IMarketDataRequest> {
+    return {
       MDReqID: `#${symbol}#0#`,
       SubscriptionRequestType: SubscriptionRequestType.SnapshotPlusUpdates,
       MarketDepth: 0,
@@ -57,6 +53,5 @@ export class FixFactory {
         }
       ]
     }
-    return bor
   }
 }

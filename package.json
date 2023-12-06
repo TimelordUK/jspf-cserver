@@ -7,6 +7,7 @@
     "build": "tsc",
     "test": "jest",
     "circular": "madge --circular --extensions js dist && madge --circular --extensions ts src",
+    "trim": "cd node_modules/jspurefix/dist && node jsfix-cmd \"--dict=../../data/FIX44-CSERVER.xml\" \"--trim\"",
     "generate": "cd node_modules/jspurefix/dist && node jsfix-cmd \"--dict=../../data/FIX44-CSERVER.xml\" \"--compile\" \"--output=../../src/types/\"",
     "replay": "cd node_modules/jspurefix/dist && node jsfix-cmd \"--dict=../../data/FIX44-CSERVER.xml\" \"--fix=../../data/example/fix.txt\" \"--objects\" --delimiter=\"|\"",
     "tokens": "cd node_modules/jspurefix/dist && node jsfix-cmd \"--dict=../../data/FIX44-CSERVER.xml\" \"--fix=../../data/example/fix.txt\" \"--tokens\" --delimiter=\"|\"",

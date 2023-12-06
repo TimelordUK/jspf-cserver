@@ -7,7 +7,7 @@
       "port": 2344
     },
     "protocol": "ascii",
-    "dictionary": "../../data/FIX44-CSERVER.xml"
+    "dictionary": "../../data/FIX44-CSERVER.trim.xml"
   },
   "Username": "js-server",
   "Password": "pwd-server",
