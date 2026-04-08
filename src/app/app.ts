@@ -37,7 +37,7 @@ class MySessionContainer extends SessionContainer {
 }
 
 class AppLauncher extends SessionLauncher {
-  client: FixClient
+  client!: FixClient
   public constructor (
     client: string,
     server: string) {
